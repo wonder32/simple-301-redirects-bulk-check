@@ -1,0 +1,23 @@
+{
+  "name": "simple-301-redirects-bulk-check",
+  "description": "WordPress Plugin - Upload your CSV and verify every redirect is working",
+  "type": "wordpress-plugin",
+  "version": "v0.0.1",
+  "license": "GPL-2.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wonder32/simple-301-redirects-bulk-check.git"
+  },
+  "authors": [
+    {
+      "name": "Wonder32",
+      "email": "wonder32@puddinq.mobi",
+      "homepage": "https://www.puddinq.nl/wip/stefan-schotvanger/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SimpleBulkCheck\\": "src/"
+    }
+  }
+}
