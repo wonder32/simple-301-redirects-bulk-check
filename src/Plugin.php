@@ -11,5 +11,10 @@ namespace SimpleBulkCheck;
 
 class Plugin
 {
+    private $Filter;
 
+    public function __construct()
+    {
+        $this->Filter = '';
+    }
 }
