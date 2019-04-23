@@ -29,9 +29,41 @@ class Request
 
 
         if (count($urls) != 2 ) {
-            wp_json_encode(array('Error', 'Two urls are needed'));
+            $data['errors']['two_columns'] = __('There should be two columns', 'simple-bulk-check');
+            wp_json_encode($data);
         }
+        
+        $http_request = self::get_url($_POST['urls'][0]);
 
+
+        switch($http_request['status']) {
+            case '200':
+                echo "you have status {$http_request['status']}\n";
+                echo "FAIL: {$_POST['urls'][0]} is NOT redirecting to {$_POST['urls'][1]}\n";
+                break;
+            case '301':
+            case '302':
+                echo "you have status {$http_request['status']}\n";
+                if ($http_request['redirect'] == $_POST['urls'][1]) {
+                    echo "SUCCES: {$_POST['urls'][0]} is redirecting to {$_POST['urls'][1]}\n";
+                } else {
+                    echo "FAIL: {$_POST['urls'][0]} is NOT redirecting to {$_POST['urls'][1]}, but to {$redirect}\n";
+                }
+                break;
+            default:
+                echo "you have status {$http_request['status']}\n";
+
+                break;
+        }
+        
+
+        wp_die();
+    }
+    
+    public static function get_url($url) {
+
+        $http_request = array();
+            
         $ch = curl_init($_POST['urls'][0]);
         curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
         curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
@@ -40,36 +72,13 @@ class Request
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-        $output = curl_exec($ch);
+        $http_request[] = curl_exec($ch);
 
-        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $http_request['status'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        echo curl_getinfo($ch,CURLINFO_EFFECTIVE_URL );
-wp_die();
-
-        switch($http_code) {
-            case '200':
-                echo "you have status {$http_code}\n";
-                echo "FAIL: {$_POST['urls'][0]} is NOT redirecting to {$_POST['urls'][1]}\n";
-                break;
-            case '301':
-            case '302':
-                echo "you have status {$http_code}\n";
-                $redirect = curl_getinfo($ch,CURLINFO_EFFECTIVE_URL );
-                if ($redirect == $_POST['urls'][1]) {
-                    echo "SUCCES: {$_POST['urls'][0]} is redirecting to {$_POST['urls'][1]}\n";
-                } else {
-                    echo "FAIL: {$_POST['urls'][0]} is NOT redirecting to {$_POST['urls'][1]}, but to {$redirect}\n";
-                }
-                break;
-            default:
-                echo "you have status {$http_code}\n";
-
-                break;
-        }
+        $http_request['redirect'] = curl_getinfo($ch,CURLINFO_EFFECTIVE_URL );
         curl_close($ch);
-
-        wp_die();
+        return $http_request;
     }
 
     public static function trackAllLocations($newUrl, $currentUrl){
