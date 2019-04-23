@@ -8,13 +8,16 @@
 
 namespace SimpleBulkCheck;
 
+//use SimpleBulkCheck\AdminPage;
+
 
 class Plugin
 {
-    private $Filter;
+    private $filter;
 
     public function __construct()
     {
-        $this->Filter = '';
+        $admin_page = new AdminPage();
     }
+
 }

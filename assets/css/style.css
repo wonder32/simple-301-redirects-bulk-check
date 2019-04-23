@@ -1,0 +1,34 @@
+
+.simple-bulk-check h2 {
+    display: inline-block;
+}
+
+.simple-bulk-check #file_info,
+.simple-bulk-check #the_form {
+    display: inline-block;
+    margin-left: 35px;
+}
+.simple-bulk-check table td:last-child,
+.simple-bulk-check table th:last-child{
+    width:100px;
+}
+
+th#verifiy-result {
+    padding: 0;
+}
+
+div#check-selectedbutton {
+    padding: 8px;
+    background-color: darkseagreen;
+    padding-left: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.simple-bulk-check table td:first-child
+.simple-bulk-check table th:first-child{
+    width:40px;
+}
+.simple-bulk-check table {
+    margin-top: 12px;
+}

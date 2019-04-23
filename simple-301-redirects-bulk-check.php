@@ -22,6 +22,7 @@ if ( ! defined('WPINC')) {
 /**
  * constants
  */
+define ('SIMPLE_BULK_CHECK_VERSION', 'v0.0.1');
 define ('SIMPLE_BULK_CHECK_DIR', __DIR__);
 define ('SIMPLE_BULK_CHECK_FILE', __FILE__);
 define ('SIMPLE_BULK_CHECK_URL', plugin_dir_url( __FILE__ ));
@@ -40,6 +41,6 @@ use SimpleBulkCheck\Plugin;
 /**
  * start plugin
  */
-if ( !is_admin() ) {
+if ( is_admin() ) {
     $plugin = new Plugin();
 }
