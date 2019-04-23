@@ -20,7 +20,12 @@ class AdminPage
 
         $this->filter->add_action('admin_enqueue_scripts', $this, 'enqueue_styles_script');
         $this->filter->add_action('admin_menu', $this, 'create_page');
+
+        $request = new Request();
+        $this->filter->add_action('wp_ajax_check_url', $request, 'check_url');
+        $this->filter->add_action('wp_ajax_nopriv_check_url', $request, 'check_url');
         $this->filter->run();
+
 
     }
 
@@ -39,8 +44,16 @@ class AdminPage
     }
 
     public function enqueue_styles_script() {
+
+        $value = array(
+            'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'ajax_nonce' => wp_create_nonce('check_url')
+        );
+
         wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
         wp_enqueue_script('simple-bulk-check-script', plugins_url('assets/js/script.js', SIMPLE_BULK_CHECK_FILE), ['jquery'], SIMPLE_BULK_CHECK_VERSION);
+
+        wp_localize_script('simple-bulk-check-script', 'simple_check', $value);
     }
 
     // page output

@@ -1,5 +1,5 @@
 {
-  "name": "simple-301-redirects-bulk-check",
+  "name": "puddinq/simple-301-redirects-bulk-check",
   "description": "WordPress Plugin - Upload your CSV and verify every redirect is working",
   "type": "wordpress-plugin",
   "version": "v0.0.1",

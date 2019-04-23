@@ -18,6 +18,7 @@ class Plugin
     public function __construct()
     {
         $admin_page = new AdminPage();
+
     }
 
 }

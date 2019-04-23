@@ -1,4 +1,4 @@
-var csv = {};
+let csv = {};
 
 function fileInfo(e) {
     var file = e.target.files[0];
@@ -72,25 +72,39 @@ function handleFileSelect() {
 function checkSelected (e) {
     if(e.target && e.target.id== 'check-selectedbutton') {
 
+        let check_ids = [];
+
         jQuery("tbody input:checkbox:checked").each(function(){
-            let check_id = jQuery(this).attr('id').replace('check-', '');
-            let result = requestUrl(check_id);
+            check_ids.push(jQuery(this).attr('id').replace('check-', ''));
+        });
+
+        let p = jQuery.when();
+        check_ids.forEach(function(id) {
+            p = p.then(function() {
+                 return requestUrl(id);
+            });
         });
 
     }
 }
 
 function requestUrl(id) {
-
-    let old_url = csv[id][0];
-    let new_url = csv[id][1];
-    jQuery.ajax({
-        url:      old_url,
-        dataType: 'text',
-        type:     'GET',
-        complete:  function(xhr){
-            console.table(xhr);
-        }
+    return jQuery.ajax({
+            // we get my_plugin.ajax_url from php, ajax_url was the key the url the value
+            url: simple_check.ajax_url,
+            type: 'post',
+            data: {
+                // remember_setting should match the last part of the hook (2) in the php file (4)
+                action: 'check_url',
+                nonce: simple_check.ajax_nonce,
+                urls: csv[id]
+            },
+            // if successfull show the result in the console
+            // you could append the outcome in the html of the
+            // page
+            success: function (response) {
+                console.log(response);
+            }
     });
 }
 
