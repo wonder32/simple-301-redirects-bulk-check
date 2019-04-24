@@ -18,6 +18,15 @@ function handleFileSelect() {
     reader.onload = function (file) {
         var content = file.target.result;
         var rows = file.target.result.split(/[\r\n|\n]+/);
+        var all_urls = file.target.result.split(/[\r\n|\n|,]+/);
+
+        let findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index)
+        let doubles = findDuplicates(all_urls);
+        let all_unique = (a) => a.filter(function(item, pos) {
+            return a.indexOf(item) == pos;
+        })
+        let all = all_unique(doubles);
+        console.table(all);
         var table = document.getElementById("simple-bulk-check-table").getElementsByTagName('tbody')[0];
         table.innerHTML = '';
 
@@ -39,11 +48,19 @@ function handleFileSelect() {
                 checkBox.id = 'check-' + i;
                 check.appendChild(checkBox);
                 tr.appendChild(check);
-
+                let text = '';
                 for (var j = 0; j < arr.length; j++) {
 
-                    var td = document.createElement('td');
 
+                    if (arr[0] == arr[1]) {
+                        text = 'ERROR SAME LINK';
+                    }
+
+                    var td = document.createElement('td');
+                    let group_id = all.indexOf(arr[j]);
+                    if (group_id != -1) {
+                        td.classList.add('group-id-' + group_id);
+                    }
                     if (link_reg.test(arr[j])) {
                         var a = document.createElement('a');
                         a.href = arr[j];
@@ -58,6 +75,7 @@ function handleFileSelect() {
 
                 let result = document.createElement('td');
                 result.id = 'result-' + i;
+                result.innerHTML = text;
                 tr.appendChild(result);
 
                 table.appendChild(tr);
@@ -69,6 +87,15 @@ function handleFileSelect() {
     reader.readAsText(file);
 }
 
+function selectAll(e) {
+    if(e.target && e.target.id == 'check-all') {
+        if (e.target.checked) {
+            jQuery("[id^=check-]").attr('checked','checked');check-0
+        } else {
+            jQuery('input:checkbox').removeAttr('checked');
+        }
+    }
+}
 function checkSelected (e) {
     if(e.target && e.target.id== 'check-selectedbutton') {
 
@@ -97,13 +124,14 @@ function requestUrl(id) {
                 // remember_setting should match the last part of the hook (2) in the php file (4)
                 action: 'check_url',
                 nonce: simple_check.ajax_nonce,
-                urls: csv[id]
+                urls: csv[id],
+                id: id
             },
             // if successfull show the result in the console
             // you could append the outcome in the html of the
             // page
             success: function (response) {
-                console.log(response);
+                console.table(response);
             }
     });
 }
@@ -111,7 +139,7 @@ function requestUrl(id) {
 jQuery(document).ready(function () {
     document.getElementById('the_form').addEventListener('submit', handleFileSelect, false);
     document.getElementById('the_file').addEventListener('change', fileInfo, false);
-
-    document.addEventListener('click',function(e){'click', checkSelected(e)});
+    document.addEventListener('click',function(e){checkSelected(e)});
+    document.addEventListener('click',function(e) {selectAll(e); });
 
 });
