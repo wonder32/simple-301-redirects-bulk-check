@@ -48,6 +48,10 @@ div.legend {
     width: 16px;
 }
 
+input#filterlist {
+    float: right;
+    width:200px;
+}
 
 .group-id-1 {
     filter: brightness(89%);

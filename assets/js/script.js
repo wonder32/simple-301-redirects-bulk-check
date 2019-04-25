@@ -179,6 +179,32 @@ function mouseout(e){
     }
 }
 
+function filterList() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("filterlist");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("simple-bulk-check-table");
+    tr = table.getElementsByTagName("tr");
+    console.table(tr);
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td_a = tr[i].getElementsByTagName("td")[1];
+        td_b = tr[i].getElementsByTagName("td")[2];
+        if (td_a && td_b) {
+            txtValueA = td_a.textContent || td_a.innerText;
+            txtValueB = td_b.textContent || td_b.innerText;
+            if (txtValueA.toUpperCase().indexOf(filter) > -1 || txtValueB.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+
+            }
+        }
+    }
+}
+
 jQuery(document).ready(function () {
     document.getElementById('the_form').addEventListener('submit', handleFileSelect, false);
     document.getElementById('the_file').addEventListener('change', fileInfo, false);
