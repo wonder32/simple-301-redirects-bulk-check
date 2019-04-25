@@ -43,23 +43,28 @@ class AdminPage
 
     }
 
-    public function enqueue_styles_script() {
+    public function enqueue_styles_script()
+    {
 
-        $value = array(
-            'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'ajax_nonce' => wp_create_nonce('check_url'),
-            'spinner'   => plugins_url('assets/img/spinner.gif', SIMPLE_BULK_CHECK_FILE),
-            'file_name' => __('File Name:', 'simple-bulk-check'),
-            'succes' => __('SUCCESS', 'simple-bulk-check'),
-            'different' => __('redirects different', 'simple-bulk-check'),
-            'tem_succes' => __('SUCCESS 302', 'simple-bulk-check'),
-            'tem_fail' => __('FAIL 302 to other', 'simple-bulk-check'),
-            'fail' => __('FAIL link is not redirecting', 'simple-bulk-check'),
-        );
+        $screen = get_current_screen();
 
-        wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
-        wp_enqueue_script('simple-bulk-check-script', plugins_url('assets/js/script.js', SIMPLE_BULK_CHECK_FILE), ['jquery'], SIMPLE_BULK_CHECK_VERSION);
-        wp_localize_script('simple-bulk-check-script', 'simple_check', $value);
+        if ($screen->id === 'tools_page_simple-bulk-check') {
+            $value = array(
+                'ajax_url' => admin_url('admin-ajax.php'),
+                'ajax_nonce' => wp_create_nonce('check_url'),
+                'spinner' => plugins_url('assets/img/spinner.gif', SIMPLE_BULK_CHECK_FILE),
+                'file_name' => __('File Name:', 'simple-bulk-check'),
+                'succes' => __('SUCCESS', 'simple-bulk-check'),
+                'different' => __('redirects different', 'simple-bulk-check'),
+                'tem_succes' => __('SUCCESS 302', 'simple-bulk-check'),
+                'tem_fail' => __('FAIL 302 to other', 'simple-bulk-check'),
+                'fail' => __('FAIL link is not redirecting', 'simple-bulk-check'),
+            );
+
+            wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
+            wp_enqueue_script('simple-bulk-check-script', plugins_url('assets/js/script.js', SIMPLE_BULK_CHECK_FILE), ['jquery'], SIMPLE_BULK_CHECK_VERSION);
+            wp_localize_script('simple-bulk-check-script', 'simple_check', $value);
+        }
     }
 
     // page output
