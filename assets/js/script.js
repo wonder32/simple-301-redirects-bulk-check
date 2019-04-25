@@ -7,7 +7,7 @@ function fileInfo(e) {
         e.target.parentNode.reset();
         return;
     } else {
-        document.getElementById('file_info').innerHTML = "<p>File Name: " + file.name + " | " + file.size + " Bytes.</p>";
+        document.getElementById('file_info').innerHTML = "<p>" + simple_check.file_name + " " + file.name + " | " + file.size + " Bytes.</p>";
     }
 }
 
@@ -149,18 +149,20 @@ function requestUrl(id) {
 }
 
 function displayresults(response) {
-    console.table(response['status']);
-    if (response['status'] == '301' && response['redirect'] == csv[response['id']][1]) {
-        jQuery('#result-' + response['id']).text('SUCCESS');
-    } else if (response['status'] == '301') {
-        jQuery('#result-' + response['id']).text('Redirects temporarily DIFFERENT');
-    }
-    if (response['status'] == '302' && response['redirect'] == csv[response['id']][1]) {
-        jQuery('#result-' + response['id']).text('SUCCESS temporarily');
-    } else if (response['status'] == '302') {
-        jQuery('#result-' + response['id']).text('DIFFERENT temporarily');
-    }
 
+    if (response['status'] == '301' && response['redirect'] == csv[response['id']][1]) {
+        jQuery('#result-' + response['id']).text(simple_check.succes);
+    } else if (response['status'] == '301') {
+        jQuery('#result-' + response['id']).text(simple_check.different);
+    } else if (response['status'] == '302' && response['redirect'] == csv[response['id']][1]) {
+        jQuery('#result-' + response['id']).text(simple_check.tem_succes);
+    } else if (response['status'] == '302') {
+        jQuery('#result-' + response['id']).text(simple_check.tem_fail);
+    } else if (response['status'] == '200') {
+        jQuery('#result-' + response['id']).text(simple_check.fail);
+    } else  {
+        jQuery('#result-' + response['id']).text('FAIL ' + response['status']);
+    }
 }
 
 function mouseover(e){

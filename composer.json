@@ -2,7 +2,7 @@
   "name": "puddinq/simple-301-redirects-bulk-check",
   "description": "WordPress Plugin - Upload your CSV and verify every redirect is working",
   "type": "wordpress-plugin",
-  "version": "v0.0.2",
+  "version": "v0.0.3",
   "license": "GPL-2.0-or-later",
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
     "psr-4": {
       "SimpleBulkCheck\\": "src/"
     }
+  },
+  "require": {
+    "yahnis-elsts/plugin-update-checker": "^4.6"
   }
 }

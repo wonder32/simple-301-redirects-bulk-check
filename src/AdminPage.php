@@ -48,7 +48,13 @@ class AdminPage
         $value = array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'ajax_nonce' => wp_create_nonce('check_url'),
-            'spinner'   => plugins_url('assets/img/spinner.gif', SIMPLE_BULK_CHECK_FILE)
+            'spinner'   => plugins_url('assets/img/spinner.gif', SIMPLE_BULK_CHECK_FILE),
+            'file_name' => __('File Name:', 'simple-bulk-check'),
+            'succes' => __('SUCCESS', 'simple-bulk-check'),
+            'different' => __('redirects different', 'simple-bulk-check'),
+            'tem_succes' => __('SUCCESS 302', 'simple-bulk-check'),
+            'tem_fail' => __('FAIL 302 to other', 'simple-bulk-check'),
+            'fail' => __('FAIL link is not redirecting', 'simple-bulk-check'),
         );
 
         wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
@@ -65,14 +71,17 @@ class AdminPage
         $button = __('Upload csv', 'simple-bulk-check');
 
         $form = <<<HTML
-    <form action="javascript:void(0);" id="the_form">
-      <input type="file" id="the_file" required="required" accept=".csv"/>
-      <input type="submit" value="$button" class="btn"/>
-    </form>
-    <div id="file_info"></div>
-    <div id="list"></div>
+            <form action="javascript:void(0);" id="the_form">
+              <input type="file" id="the_file" required="required" accept=".csv"/>
+              <input type="submit" value="$button" class="btn"/>
+            </form>
+            <div id="file_info"></div>
+            <div id="list"></div>
 HTML;
         echo $form;
+
+        echo '<div class="legend group-id-1"></div><div class="legend group-id-2"></div><div class="legend group-id-3"></div>' .  __('The same color for the same url', 'simple-bulk-check') ;
+        echo '<div class="legend" style="background-color: orange"></div><div class="legend" style="background-color: orange"></div><div class="legend" style="background-color: orange"></div>  ' . __('Highlight the same url everywhere', 'simple-bulk-check') ;
 
 
 

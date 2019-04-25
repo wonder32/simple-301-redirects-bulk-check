@@ -3,7 +3,7 @@
 Plugin Name: Simple 301 redirects - Bulk Check
 Plugin URI:  https://www.puddinq.com/
 Description: Upload your CSV and verify every redirect is working
-Version:     0.0.2
+Version:     0.0.3
 Tags: simple, 301, redirect, url, seo, bulk, verify
 Author:      Stefan Schotvanger
 Author URI:  https://www.puddinq.com/wip/stefan-schotvanger/
@@ -23,7 +23,7 @@ if ( ! defined('WPINC')) {
 /**
  * constants
  */
-define ('SIMPLE_BULK_CHECK_VERSION', 'v0.0.2');
+define ('SIMPLE_BULK_CHECK_VERSION', 'v0.0.3');
 define ('SIMPLE_BULK_CHECK_DIR', __DIR__);
 define ('SIMPLE_BULK_CHECK_FILE', __FILE__);
 define ('SIMPLE_BULK_CHECK_URL', plugin_dir_url( __FILE__ ));

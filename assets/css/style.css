@@ -33,67 +33,58 @@ div#check-selectedbutton {
     margin-top: 12px;
 }
 
+div#list {
+    display: inline-block;
+}
+
+div.legend,
 td[class^="group-id"] {
     background-color: aliceblue;
 }
 
-.group-id-1:hover + .group-id-1 {
-    background-color: #000;
+div.legend {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
 }
+
+
 .group-id-1 {
     filter: brightness(89%);
 }
-.group-id-2:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-2 {
     filter: brightness(86%);
 }
-.group-id-3:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-3 {
     filter: brightness(83%);
 }
-.group-id-4:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-4 {
     filter: brightness(82%);
 }
-.group-id-5:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-5 {
     filter: brightness(79%);
 }
-.group-id-6:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-6 {
     filter: brightness(76%);
 }
-.group-id-7:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-7 {
     filter: brightness(73%);
 }
-.group-id-8:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-8 {
     filter: brightness(70%);
 }
-.group-id-9:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-9 {
     filter: brightness(50%);
 }
-.group-id-10:hover {
-    background-color: #5F8E14;
-}
+
 .group-id-10 {
     filter: brightness(50%);
 }

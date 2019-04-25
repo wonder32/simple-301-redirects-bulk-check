@@ -1,0 +1,101 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Simple 301 redirects - Bulk Check\n"
+"POT-Creation-Date: 2019-04-25 18:09+0200\n"
+"PO-Revision-Date: 2019-04-25 18:09+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.13\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: simple-301-redirects-bulk-check.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: src/AdminPage.php:36
+msgid "Simple 301 redirects - Bulk Check."
+msgstr ""
+
+#: src/AdminPage.php:37
+msgid "301 Redirects Verify"
+msgstr ""
+
+#: src/AdminPage.php:52
+msgid "File Name:"
+msgstr ""
+
+#: src/AdminPage.php:53
+msgid "SUCCESS"
+msgstr ""
+
+#: src/AdminPage.php:54
+msgid "redirects different"
+msgstr ""
+
+#: src/AdminPage.php:55
+msgid "SUCCESS 302"
+msgstr ""
+
+#: src/AdminPage.php:56
+msgid "FAIL 302 to other"
+msgstr ""
+
+#: src/AdminPage.php:57
+msgid "FAIL link is not redirecting"
+msgstr ""
+
+#: src/AdminPage.php:71
+msgid "Upload csv"
+msgstr ""
+
+#: src/AdminPage.php:83
+msgid "The same color for the same url"
+msgstr ""
+
+#: src/AdminPage.php:84
+msgid "Highlight the same url everywhere"
+msgstr ""
+
+#: src/AdminPage.php:91
+msgid "Original URL"
+msgstr ""
+
+#: src/AdminPage.php:91
+msgid "Redirect URL"
+msgstr ""
+
+#: src/AdminPage.php:91
+msgid "Result"
+msgstr ""
+
+#: src/Request.php:33
+msgid "There should be two columns"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Simple 301 redirects - Bulk Check"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.puddinq.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Upload your CSV and verify every redirect is working"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Stefan Schotvanger"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.puddinq.com/wip/stefan-schotvanger/"
+msgstr ""
