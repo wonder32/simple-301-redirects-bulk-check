@@ -10,7 +10,7 @@
 }
 .simple-bulk-check table td:last-child,
 .simple-bulk-check table th:last-child{
-    width:100px;
+    width:160px;
 }
 
 th#verifiy-result {
@@ -37,8 +37,8 @@ td[class^="group-id"] {
     background-color: aliceblue;
 }
 
-.group-id-1:hover {
-    filter: brightness(93%);
+.group-id-1:hover + .group-id-1 {
+    background-color: #000;
 }
 .group-id-1 {
     filter: brightness(89%);

@@ -47,12 +47,12 @@ class AdminPage
 
         $value = array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
-            'ajax_nonce' => wp_create_nonce('check_url')
+            'ajax_nonce' => wp_create_nonce('check_url'),
+            'spinner'   => plugins_url('assets/img/spinner.gif', SIMPLE_BULK_CHECK_FILE)
         );
 
         wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
         wp_enqueue_script('simple-bulk-check-script', plugins_url('assets/js/script.js', SIMPLE_BULK_CHECK_FILE), ['jquery'], SIMPLE_BULK_CHECK_VERSION);
-
         wp_localize_script('simple-bulk-check-script', 'simple_check', $value);
     }
 

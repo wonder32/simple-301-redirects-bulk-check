@@ -26,7 +26,7 @@ function handleFileSelect() {
             return a.indexOf(item) == pos;
         })
         let all = all_unique(doubles);
-        console.table(all);
+
         var table = document.getElementById("simple-bulk-check-table").getElementsByTagName('tbody')[0];
         table.innerHTML = '';
 
@@ -54,6 +54,7 @@ function handleFileSelect() {
 
                     if (arr[0] == arr[1]) {
                         text = 'ERROR SAME LINK';
+                        checkBox.checked = false;
                     }
 
                     var td = document.createElement('td');
@@ -76,6 +77,11 @@ function handleFileSelect() {
                 let result = document.createElement('td');
                 result.id = 'result-' + i;
                 result.innerHTML = text;
+                let spinner = document.createElement('img');
+                spinner.style.display = 'none';
+                spinner.src = simple_check.spinner;
+                spinner.classList.add('spinner-load');
+                result.appendChild(spinner);
                 tr.appendChild(result);
 
                 table.appendChild(tr);
@@ -90,7 +96,7 @@ function handleFileSelect() {
 function selectAll(e) {
     if(e.target && e.target.id == 'check-all') {
         if (e.target.checked) {
-            jQuery("[id^=check-]").attr('checked','checked');check-0
+            jQuery("[id^=check-]").attr('checked','checked');
         } else {
             jQuery('input:checkbox').removeAttr('checked');
         }
@@ -130,10 +136,45 @@ function requestUrl(id) {
             // if successfull show the result in the console
             // you could append the outcome in the html of the
             // page
+            beforeSend: function() {
+                jQuery('#result-' + id + ' .spinner-load').show();
+            },
+            complete: function(){
+                jQuery('#result-' + id + ' .spinner-load').hide();
+            },
             success: function (response) {
-                console.table(response);
+                displayresults(response);
             }
     });
+}
+
+function displayresults(response) {
+    console.table(response['status']);
+    if (response['status'] == '301' && response['redirect'] == csv[response['id']][1]) {
+        jQuery('#result-' + response['id']).text('SUCCESS');
+    } else if (response['status'] == '301') {
+        jQuery('#result-' + response['id']).text('Redirects temporarily DIFFERENT');
+    }
+    if (response['status'] == '302' && response['redirect'] == csv[response['id']][1]) {
+        jQuery('#result-' + response['id']).text('SUCCESS temporarily');
+    } else if (response['status'] == '302') {
+        jQuery('#result-' + response['id']).text('DIFFERENT temporarily');
+    }
+
+}
+
+function mouseover(e){
+    if(e.target && e.target.matches('td[class^="group-id-"]')) {
+        let eclass = jQuery(e.target).attr('class');
+        jQuery('.' + eclass).css("background-color", "orange");
+    }
+}
+
+function mouseout(e){
+    if(e.target && e.target.matches('td[class^="group-id-"]')) {
+        let eclass = jQuery(e.target).attr('class');
+        jQuery('.' + eclass).css("background-color", "");
+    }
 }
 
 jQuery(document).ready(function () {
@@ -141,5 +182,7 @@ jQuery(document).ready(function () {
     document.getElementById('the_file').addEventListener('change', fileInfo, false);
     document.addEventListener('click',function(e){checkSelected(e)});
     document.addEventListener('click',function(e) {selectAll(e); });
-
+    document.addEventListener('mouseover',function(e) {mouseover(e); });
+    document.addEventListener('mouseout',function(e) {mouseout(e); });
 });
+
