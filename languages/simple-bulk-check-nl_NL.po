@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple 301 redirects - Bulk Check\n"
-"POT-Creation-Date: 2019-04-25 18:11+0200\n"
-"PO-Revision-Date: 2019-04-25 18:12+0200\n"
+"POT-Creation-Date: 2019-04-26 21:06+0200\n"
+"PO-Revision-Date: 2019-04-26 21:07+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -28,57 +28,109 @@ msgstr "Eenvoudige 301-omleidingen - Bulkcontrole."
 msgid "301 Redirects Verify"
 msgstr "301 Redirect Veriviëren"
 
-#: src/AdminPage.php:52
+#: src/AdminPage.php:56
 msgid "File Name:"
 msgstr "Bestandsnaam:"
 
-#: src/AdminPage.php:53
+#: src/AdminPage.php:57
 msgid "SUCCESS"
 msgstr "SUCCESS"
 
-#: src/AdminPage.php:54
+#: src/AdminPage.php:58
 msgid "redirects different"
 msgstr "verwijst anders"
 
-#: src/AdminPage.php:55
+#: src/AdminPage.php:59
 msgid "SUCCESS 302"
 msgstr "SUCCES 302"
 
-#: src/AdminPage.php:56
+#: src/AdminPage.php:60
 msgid "FAIL 302 to other"
 msgstr "MISLUKT 302 naar anders"
 
-#: src/AdminPage.php:57
+#: src/AdminPage.php:61
 msgid "FAIL link is not redirecting"
 msgstr "MISLUKT link redirect niet"
 
-#: src/AdminPage.php:71
+#: src/AdminPage.php:62
+msgid "Error: possible infinite loop"
+msgstr "Fout: mogelijk oneindige lus"
+
+#: src/AdminPage.php:63
+msgid "ERROR: infinite loop"
+msgstr "FOUT: oneindige lus"
+
+#: src/AdminPage.php:78
 msgid "Upload csv"
 msgstr "CSV uploaden"
 
-#: src/AdminPage.php:83
-msgid "The same color for the same url"
-msgstr "Dezelfde kleur voor dezelfde URL"
-
-#: src/AdminPage.php:84
-msgid "Highlight the same url everywhere"
-msgstr "Markeer overal dezelfde URL"
+#: src/AdminPage.php:90
+msgid "Possible infinite loop"
+msgstr "Mogelijke oneindige lus"
 
 #: src/AdminPage.php:91
+msgid "hover to highlight possible loop"
+msgstr "muis om mogelijke lus te markeren"
+
+#: src/AdminPage.php:98
 msgid "Original URL"
 msgstr "Originele URL"
 
-#: src/AdminPage.php:91
+#: src/AdminPage.php:99
+msgid "Filter list"
+msgstr "Filter lijst"
+
+#: src/AdminPage.php:99
 msgid "Redirect URL"
 msgstr "Omleiding URL"
 
-#: src/AdminPage.php:91
+#: src/AdminPage.php:99
 msgid "Result"
 msgstr "Resultaat"
 
 #: src/Request.php:33
 msgid "There should be two columns"
 msgstr "Er moeten twee kolommen zijn"
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:54
+msgid "View details"
+msgstr "Details bekijken"
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr "Meer informatie over %s"
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr "Controleer op updates"
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:213
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "De %s plugin is bijgewerkt."
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:215
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "Er is een nieuwe versie van de %s plugin beschikbaar."
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:217
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "Kon niet bepalen of updates beschikbaar zijn voor %s."
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:223
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Onbekende updatecontrole status \"%s\""
+
+#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "Er is geen changelog beschikbaar."
 
 #. Plugin Name of the plugin/theme
 msgid "Simple 301 redirects - Bulk Check"
@@ -99,3 +151,9 @@ msgstr "Stefan Schotvanger"
 #. Author URI of the plugin/theme
 msgid "https://www.puddinq.com/wip/stefan-schotvanger/"
 msgstr "https://www.puddinq.com/wip/stefan-schotvanger/"
+
+#~ msgid "The same color for the same url"
+#~ msgstr "Dezelfde kleur voor dezelfde URL"
+
+#~ msgid "Highlight the same url everywhere"
+#~ msgstr "Markeer overal dezelfde URL"

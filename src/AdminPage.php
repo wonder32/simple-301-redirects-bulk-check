@@ -59,6 +59,8 @@ class AdminPage
                 'tem_succes' => __('SUCCESS 302', 'simple-bulk-check'),
                 'tem_fail' => __('FAIL 302 to other', 'simple-bulk-check'),
                 'fail' => __('FAIL link is not redirecting', 'simple-bulk-check'),
+                'possible_infinite' => __('Error: possible infinite loop', 'simple-bulk-check'),
+                'infinite_loop' => __('ERROR: infinite loop', 'simple-bulk-check'),
             );
 
             wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
@@ -85,8 +87,8 @@ class AdminPage
 HTML;
         echo $form;
 
-        echo '<div class="legend group-id-1"></div><div class="legend group-id-2"></div><div class="legend group-id-3"></div>' .  __('The same color for the same url', 'simple-bulk-check') ;
-        echo '<div class="legend" style="background-color: orange"></div><div class="legend" style="background-color: orange"></div><div class="legend" style="background-color: orange"></div>  ' . __('Highlight the same url everywhere', 'simple-bulk-check') ;
+        echo '<div class="legend group-id-1"></div><div class="legend group-id-2"></div><div class="legend group-id-3"></div>' .  __('Possible infinite loop', 'simple-bulk-check') ;
+        echo ' <div class="legend" style="background-color: orange"></div><div class="legend" style="background-color: orange"></div><div class="legend" style="background-color: orange"></div>  ' . __('hover to highlight possible loop', 'simple-bulk-check') ;
 
 
 

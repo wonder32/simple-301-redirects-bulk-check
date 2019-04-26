@@ -18,10 +18,16 @@ function handleFileSelect() {
     reader.onload = function (file) {
         var content = file.target.result;
         var rows = file.target.result.split(/[\r\n|\n]+/);
-        var all_urls = file.target.result.split(/[\r\n|\n|,]+/);
+        var first_column = new Array();
+        for (var i = 0; i < rows.length; i++) {
+            var arr = rows[i].split(/[;,]/);
+            first_column.push(arr[0]);
+        }
+        var all_urls = file.target.result.split(/[\r\n|\n|,|;]+/);
 
         let findDuplicates = (arr) => arr.filter((item, index) => arr.indexOf(item) != index)
         let doubles = findDuplicates(all_urls);
+
         let all_unique = (a) => a.filter(function(item, pos) {
             return a.indexOf(item) == pos;
         })
@@ -29,10 +35,9 @@ function handleFileSelect() {
 
         var table = document.getElementById("simple-bulk-check-table").getElementsByTagName('tbody')[0];
         table.innerHTML = '';
-
         for (var i = 0; i < rows.length; i++) {
 
-            var arr = rows[i].split(',');
+            var arr = rows[i].split(/[;,]/);
 
             if (typeof arr !== 'undefined' && arr.length > 1) {
                 var tr = document.createElement('tr');
@@ -51,17 +56,19 @@ function handleFileSelect() {
                 let text = '';
                 for (var j = 0; j < arr.length; j++) {
 
+                    var td = document.createElement('td');
+                    let group_id = all.indexOf(arr[j]);
+                    let group_id_first = first_column.indexOf(arr[j]);
+                    if (group_id != -1 && group_id_first != -1) {
+                        td.classList.add('group-id-' + group_id);
+                        text = simple_check.possible_infinite;
+                    }
 
                     if (arr[0] == arr[1]) {
-                        text = 'ERROR SAME LINK';
+                        text = simple_check.infinite_loop;
                         checkBox.checked = false;
                     }
 
-                    var td = document.createElement('td');
-                    let group_id = all.indexOf(arr[j]);
-                    if (group_id != -1) {
-                        td.classList.add('group-id-' + group_id);
-                    }
                     if (link_reg.test(arr[j])) {
                         var a = document.createElement('a');
                         a.href = arr[j];
@@ -107,7 +114,7 @@ function checkSelected (e) {
 
         let check_ids = [];
 
-        jQuery("tbody input:checkbox:checked").each(function(){
+        jQuery("tbody tr:visible input:checkbox:checked").each(function(){
             check_ids.push(jQuery(this).attr('id').replace('check-', ''));
         });
 

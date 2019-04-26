@@ -53,42 +53,13 @@ input#filterlist {
     width:200px;
 }
 
-.group-id-1 {
-    filter: brightness(89%);
-}
-
-.group-id-2 {
-    filter: brightness(86%);
-}
-
-.group-id-3 {
-    filter: brightness(83%);
-}
-
-.group-id-4 {
-    filter: brightness(82%);
-}
-
-.group-id-5 {
-    filter: brightness(79%);
-}
-
-.group-id-6 {
-    filter: brightness(76%);
-}
-
-.group-id-7 {
-    filter: brightness(73%);
-}
-
-.group-id-8 {
-    filter: brightness(70%);
-}
-
-.group-id-9 {
-    filter: brightness(50%);
-}
-
-.group-id-10 {
-    filter: brightness(50%);
-}
+.group-id-1 { filter: brightness(100%); }
+.group-id-2 { filter: brightness(96%); }
+.group-id-3 { filter: brightness(92%); }
+.group-id-4 { filter: brightness(88%); }
+.group-id-5 { filter: brightness(84%); }
+.group-id-6 { filter: brightness(80%); }
+.group-id-7 { filter: brightness(76%); }
+.group-id-8 { filter: brightness(72%); }
+.group-id-9 { filter: brightness(68%); }
+.group-id-10 { filter: brightness(72%); }
