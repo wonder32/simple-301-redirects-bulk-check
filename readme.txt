@@ -2,59 +2,44 @@
 Contributors: Stefan Schotvanger
 Tags: google, analytics, cached, embed
 Requires at least: 4.5
-Tested up to: 5.1
-Stable tag: v0.0.4
+Tested up to: 5.2
+Stable tag: 0.0.1
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Puddinq Map Geo is an inplementation of open layers in combination wirh open streetmaps and various OpenData sources.
+Simply check if the redirects in your csv list are working
 
 == Description ==
-Upload your CSV and verify every redirect is working
+Simply check if the redirects in your csv list are working
+
+* Upload the csv file
+* Hit 'Check selected'
+* See the result of the request
 
 == Installation ==
-Just install the zip any way your are custom with, updates will be served in the usual way
+
+= 3 ways =
+* Use the plugin upload functionality to upload the zip and install the plugin.
+* Extract to contents of the zip to the plugins directory of your installation.
+* Find the plugin and press install (WordPress plugins)
+
+
+== Frequently Asked Questions ==
+
+= How do I access the functionality? =
+
+When the plugin is activated, there will be a submenu item under tools.
 
 == Screenshots ==
 1. The screenshot
 
 == Changelog ==
 
-=== 0.0.4 Working checker ===
-* Colors our now for infinite loop hints
-* lighter colors
-* List can be filtered
-* Filtered rows will not be check
-* Accept csn files with , and ;
-*
+= 0.0.1 =
 
-=== 0.0.3 Working checker ===
-* Adminpage
-* CSV loader
-* CURL checker
-* Translated
+initial release
 
 
 
 == Upgrade Notice ==
 no reason to upgrade
-
-------------------------------------------------------------
-_________________________$$$$$$$____________________________
-________________________$$$$$$$$$$__________________________
-________________________$$$$$$$$$$$_________________________
-_________________________$$$$$$$$$$$$$$_____________________
-___________PUDDINQ LOVE___$$$$$$$$$$$_______________________
-_____________________________$$$$$$$$$$$$$__________________
-___________________________$$$$$$$$$$_______________________
-_________________________$$$$$$$$$$$$$$$____________________
-________________$$$______$$$$$$$$$$$$$$_____________________
-______________$$$$$$$$_____$$$$$$__$$$$$____________________
-_____________$$$$$$$$$$_____$$$$____$$$$$___________________
-___________$$$$$$_$$$$$$$$__$$$$______$$$$__________________
-__________$$$$$_____$$$$$$$$_$$$$_______$$$_________________
-________$$$$$_________$$$$$$$$$$$$_______$$$________________
-_______$$$_____________$$$$$$$$$$$________$$$_______________
-_____$$$________________$$$$$$$$$$________$$$$$$____________
-__$$$$$$__________________$$$$$$$___________________________
-------------------------------------------------------------

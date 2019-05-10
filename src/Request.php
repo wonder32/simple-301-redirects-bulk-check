@@ -31,26 +31,13 @@ class Request
 
         if (count($urls) != 2 ) {
             $data['errors']['two_columns'] = __('There should be two columns', 'simple-bulk-check');
-            wp_json_encode($data);
+            wp_send_json($data);
         }
 
         $redirects = array();
 
         $http_request = self::get_url($_POST['urls'][0]);
 
-
-//        if (!empty($http_request['redirect'])){
-//            $http_request = self::get_url($http_request['redirect']);
-//            $redirects[] = $http_request['redirect'];
-//        }
-//        if (!empty($http_request['redirect'])){
-//            $http_request = self::get_url($http_request['redirect']);
-//            $redirects[] = $http_request['redirect'];
-//        }
-//        if (!empty($http_request['redirect'])){
-//            $http_request = self::get_url($http_request['redirect']);
-//            $redirects[] = $http_request['redirect'];
-//        }
         $redirects['redirect'] = $http_request['redirect'];
         $redirects['status'] = $http_request['status'];
         $redirects['id'] = $urls['id'];
@@ -74,7 +61,7 @@ class Request
         }
 
         wp_send_json($redirects);
-        wp_die();
+
     }
     
     public static function get_url($url) {

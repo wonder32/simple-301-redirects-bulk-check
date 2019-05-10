@@ -22,6 +22,7 @@ class AdminPage
         $this->filter->add_action('admin_menu', $this, 'create_page');
 
         $request = new Request();
+
         $this->filter->add_action('wp_ajax_check_url', $request, 'check_url');
         $this->filter->add_action('wp_ajax_nopriv_check_url', $request, 'check_url');
         $this->filter->run();
@@ -54,12 +55,12 @@ class AdminPage
                 'ajax_nonce' => wp_create_nonce('check_url'),
                 'spinner' => plugins_url('assets/img/spinner.gif', SIMPLE_BULK_CHECK_FILE),
                 'file_name' => __('File Name:', 'simple-bulk-check'),
-                'succes' => __('SUCCESS', 'simple-bulk-check'),
-                'different' => __('redirects different', 'simple-bulk-check'),
+                'succes' => __('SUCCESS 301', 'simple-bulk-check'),
+                'different' => __('FAIL 301 DIFFERENT', 'simple-bulk-check'),
                 'tem_succes' => __('SUCCESS 302', 'simple-bulk-check'),
                 'tem_fail' => __('FAIL 302 to other', 'simple-bulk-check'),
                 'fail' => __('FAIL link is not redirecting', 'simple-bulk-check'),
-                'possible_infinite' => __('Error: possible infinite loop', 'simple-bulk-check'),
+                'possible_infinite' => __('ERROR: possible infinite loop', 'simple-bulk-check'),
                 'infinite_loop' => __('ERROR: infinite loop', 'simple-bulk-check'),
             );
 
