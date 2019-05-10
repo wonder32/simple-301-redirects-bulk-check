@@ -69,6 +69,18 @@ class AdminPage
         }
     }
 
+    public function explain() {
+
+        $explain = '<h2>' . __('Upload your csv an check if the redirect works.', 'simple-bulk-check') . '</h2>';
+        $explain .= '<p>' . __('1. Search a file 2. Open a file 3. Upload it', 'simple-bulk-check') . '</p>';
+        $explain .= '<img src="'.plugins_url('assets/img/explain-01.png', SIMPLE_BULK_CHECK_FILE) . '" class="explain">';
+        $explain .= '<img src="'.plugins_url('assets/img/explain-02.png', SIMPLE_BULK_CHECK_FILE) . '" class="explain">';
+        $explain .= __('1. Infinite loops 2. Result and 3. active view', 'simple-bulk-check');
+
+        return $explain;
+
+    }
+
     // page output
     public function pageOutput()
     {
@@ -100,6 +112,7 @@ HTML;
         echo '</tr>';
         echo '</thead>';
         echo '<tbody>';
+        echo '<tr><td colspan="4" style="text-align: center">' . $this->explain() . '</td></tr>';
         echo '</thody>';
         echo '</table>';
 

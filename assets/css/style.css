@@ -48,6 +48,17 @@ div.legend {
     width: 16px;
 }
 
+@media only screen and (min-width: 1600px) {
+    img.explain {
+        max-width: 50%;
+    }
+}
+
+img.explain {
+    max-width: 46%;
+    margin: 1%;
+}
+
 input#filterlist {
     float: right;
     width:200px;
