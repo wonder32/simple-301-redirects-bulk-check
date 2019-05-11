@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Simple 301 redirects - Bulk Check\n"
-"POT-Creation-Date: 2019-04-26 21:06+0200\n"
-"PO-Revision-Date: 2019-04-26 21:07+0200\n"
+"POT-Creation-Date: 2019-05-11 18:48+0200\n"
+"PO-Revision-Date: 2019-05-11 18:49+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -20,117 +20,93 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/AdminPage.php:36
+#: src/AdminPage.php:37
 msgid "Simple 301 redirects - Bulk Check."
 msgstr "Eenvoudige 301-omleidingen - Bulkcontrole."
 
-#: src/AdminPage.php:37
+#: src/AdminPage.php:38
 msgid "301 Redirects Verify"
 msgstr "301 Redirect Veriviëren"
 
-#: src/AdminPage.php:56
+#: src/AdminPage.php:57
 msgid "File Name:"
 msgstr "Bestandsnaam:"
 
-#: src/AdminPage.php:57
-msgid "SUCCESS"
-msgstr "SUCCESS"
-
 #: src/AdminPage.php:58
-msgid "redirects different"
-msgstr "verwijst anders"
+msgid "SUCCESS 301"
+msgstr "SUCCES 301"
 
 #: src/AdminPage.php:59
+msgid "FAIL 301 DIFFERENT"
+msgstr "FAIL 301 VERSCHILLEND"
+
+#: src/AdminPage.php:60
 msgid "SUCCESS 302"
 msgstr "SUCCES 302"
 
-#: src/AdminPage.php:60
+#: src/AdminPage.php:61
 msgid "FAIL 302 to other"
 msgstr "MISLUKT 302 naar anders"
 
-#: src/AdminPage.php:61
+#: src/AdminPage.php:62
 msgid "FAIL link is not redirecting"
 msgstr "MISLUKT link redirect niet"
 
-#: src/AdminPage.php:62
-msgid "Error: possible infinite loop"
-msgstr "Fout: mogelijk oneindige lus"
-
 #: src/AdminPage.php:63
+msgid "ERROR: possible infinite loop"
+msgstr "ERROR: mogelijk oneindige lus"
+
+#: src/AdminPage.php:64
 msgid "ERROR: infinite loop"
 msgstr "FOUT: oneindige lus"
 
-#: src/AdminPage.php:78
+#: src/AdminPage.php:65
+msgid "Check selected"
+msgstr "Controleer de selectie"
+
+#: src/AdminPage.php:76
+msgid "Upload your csv an check if the redirect works."
+msgstr "Upload uw csv en controleer of de omleiding werkt."
+
+#: src/AdminPage.php:77
+msgid "1. Search a file 2. Open a file 3. Upload it"
+msgstr "1. Zoek een bestand 2. Open een bestand 3. Upload het"
+
+#: src/AdminPage.php:80
+msgid "1. Infinite loops 2. Result and 3. active view"
+msgstr "1. Oneindige lussen 2. Resultaat en 3. actieve weergave"
+
+#: src/AdminPage.php:92
 msgid "Upload csv"
 msgstr "CSV uploaden"
 
-#: src/AdminPage.php:90
+#: src/AdminPage.php:104
 msgid "Possible infinite loop"
 msgstr "Mogelijke oneindige lus"
 
-#: src/AdminPage.php:91
+#: src/AdminPage.php:105
 msgid "hover to highlight possible loop"
 msgstr "muis om mogelijke lus te markeren"
 
-#: src/AdminPage.php:98
+#: src/AdminPage.php:112
 msgid "Original URL"
 msgstr "Originele URL"
 
-#: src/AdminPage.php:99
+#: src/AdminPage.php:113
 msgid "Filter list"
 msgstr "Filter lijst"
 
-#: src/AdminPage.php:99
+#: src/AdminPage.php:113
 msgid "Redirect URL"
 msgstr "Omleiding URL"
 
-#: src/AdminPage.php:99
+#: src/AdminPage.php:113
 msgid "Result"
 msgstr "Resultaat"
 
 #: src/Request.php:33
 msgid "There should be two columns"
 msgstr "Er moeten twee kolommen zijn"
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:54
-msgid "View details"
-msgstr "Details bekijken"
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:77
-#, php-format
-msgid "More information about %s"
-msgstr "Meer informatie over %s"
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:128
-msgid "Check for updates"
-msgstr "Controleer op updates"
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:213
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr "De %s plugin is bijgewerkt."
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:215
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr "Er is een nieuwe versie van de %s plugin beschikbaar."
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr "Kon niet bepalen of updates beschikbaar zijn voor %s."
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:223
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr "Onbekende updatecontrole status \"%s\""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
-msgstr "Er is geen changelog beschikbaar."
 
 #. Plugin Name of the plugin/theme
 msgid "Simple 301 redirects - Bulk Check"
@@ -151,6 +127,42 @@ msgstr "Stefan Schotvanger"
 #. Author URI of the plugin/theme
 msgid "https://www.puddinq.com/wip/stefan-schotvanger/"
 msgstr "https://www.puddinq.com/wip/stefan-schotvanger/"
+
+#~ msgid "SUCCESS"
+#~ msgstr "SUCCESS"
+
+#~ msgid "redirects different"
+#~ msgstr "verwijst anders"
+
+#~ msgid "Error: possible infinite loop"
+#~ msgstr "Fout: mogelijk oneindige lus"
+
+#~ msgid "View details"
+#~ msgstr "Details bekijken"
+
+#~ msgid "More information about %s"
+#~ msgstr "Meer informatie over %s"
+
+#~ msgid "Check for updates"
+#~ msgstr "Controleer op updates"
+
+#~ msgctxt "the plugin title"
+#~ msgid "The %s plugin is up to date."
+#~ msgstr "De %s plugin is bijgewerkt."
+
+#~ msgctxt "the plugin title"
+#~ msgid "A new version of the %s plugin is available."
+#~ msgstr "Er is een nieuwe versie van de %s plugin beschikbaar."
+
+#~ msgctxt "the plugin title"
+#~ msgid "Could not determine if updates are available for %s."
+#~ msgstr "Kon niet bepalen of updates beschikbaar zijn voor %s."
+
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "Onbekende updatecontrole status \"%s\""
+
+#~ msgid "There is no changelog available."
+#~ msgstr "Er is geen changelog beschikbaar."
 
 #~ msgid "The same color for the same url"
 #~ msgstr "Dezelfde kleur voor dezelfde URL"

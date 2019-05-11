@@ -29,7 +29,7 @@ class Request
 
 
 
-        if (count($urls) != 2 ) {
+        if (count($urls['urls']) != 2 ) {
             $data['errors']['two_columns'] = __('There should be two columns', 'simple-bulk-check');
             wp_send_json($data);
         }
@@ -56,7 +56,6 @@ class Request
                 break;
             default:
                 $redirects['message'] = "you have status {$http_request['status']}\n";
-
                 break;
         }
 
@@ -69,8 +68,8 @@ class Request
         $http_request = array();
             
         $ch = curl_init($_POST['urls'][0]);
-        curl_setopt($ch, CURLOPT_HEADER, true);    // we want headers
-        curl_setopt($ch, CURLOPT_NOBODY, true);    // we don't need body
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch, CURLOPT_TIMEOUT,10);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);

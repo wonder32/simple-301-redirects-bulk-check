@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Simple 301 redirects - Bulk Check\n"
-"POT-Creation-Date: 2019-04-26 21:05+0200\n"
+"POT-Creation-Date: 2019-05-11 18:48+0200\n"
 "PO-Revision-Date: 2019-04-25 18:09+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,116 +20,92 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/AdminPage.php:36
+#: src/AdminPage.php:37
 msgid "Simple 301 redirects - Bulk Check."
 msgstr ""
 
-#: src/AdminPage.php:37
+#: src/AdminPage.php:38
 msgid "301 Redirects Verify"
 msgstr ""
 
-#: src/AdminPage.php:56
+#: src/AdminPage.php:57
 msgid "File Name:"
 msgstr ""
 
-#: src/AdminPage.php:57
-msgid "SUCCESS"
-msgstr ""
-
 #: src/AdminPage.php:58
-msgid "redirects different"
+msgid "SUCCESS 301"
 msgstr ""
 
 #: src/AdminPage.php:59
-msgid "SUCCESS 302"
+msgid "FAIL 301 DIFFERENT"
 msgstr ""
 
 #: src/AdminPage.php:60
-msgid "FAIL 302 to other"
+msgid "SUCCESS 302"
 msgstr ""
 
 #: src/AdminPage.php:61
-msgid "FAIL link is not redirecting"
+msgid "FAIL 302 to other"
 msgstr ""
 
 #: src/AdminPage.php:62
-msgid "Error: possible infinite loop"
+msgid "FAIL link is not redirecting"
 msgstr ""
 
 #: src/AdminPage.php:63
+msgid "ERROR: possible infinite loop"
+msgstr ""
+
+#: src/AdminPage.php:64
 msgid "ERROR: infinite loop"
 msgstr ""
 
-#: src/AdminPage.php:78
+#: src/AdminPage.php:65
+msgid "Check selected"
+msgstr ""
+
+#: src/AdminPage.php:76
+msgid "Upload your csv an check if the redirect works."
+msgstr ""
+
+#: src/AdminPage.php:77
+msgid "1. Search a file 2. Open a file 3. Upload it"
+msgstr ""
+
+#: src/AdminPage.php:80
+msgid "1. Infinite loops 2. Result and 3. active view"
+msgstr ""
+
+#: src/AdminPage.php:92
 msgid "Upload csv"
 msgstr ""
 
-#: src/AdminPage.php:90
+#: src/AdminPage.php:104
 msgid "Possible infinite loop"
 msgstr ""
 
-#: src/AdminPage.php:91
+#: src/AdminPage.php:105
 msgid "hover to highlight possible loop"
 msgstr ""
 
-#: src/AdminPage.php:98
+#: src/AdminPage.php:112
 msgid "Original URL"
 msgstr ""
 
-#: src/AdminPage.php:99
+#: src/AdminPage.php:113
 msgid "Filter list"
 msgstr ""
 
-#: src/AdminPage.php:99
+#: src/AdminPage.php:113
 msgid "Redirect URL"
 msgstr ""
 
-#: src/AdminPage.php:99
+#: src/AdminPage.php:113
 msgid "Result"
 msgstr ""
 
 #: src/Request.php:33
 msgid "There should be two columns"
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:54
-msgid "View details"
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:77
-#, php-format
-msgid "More information about %s"
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:128
-msgid "Check for updates"
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:213
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:215
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Plugin/Ui.php:223
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr ""
-
-#: vendor/yahnis-elsts/plugin-update-checker/Puc/v4p6/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

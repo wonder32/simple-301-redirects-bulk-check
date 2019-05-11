@@ -95,7 +95,7 @@ function handleFileSelect() {
             }
         }
         document.getElementById('simple-bulk-check-table').appendChild(table);
-        document.getElementById('verifiy-result').innerHTML = '<div id="check-selectedbutton">Check selected</div>';
+        document.getElementById('verifiy-result').innerHTML = '<div id="check-selectedbutton">' + simple_check.check_selected + '</div>';
     };
     reader.readAsText(file);
 }

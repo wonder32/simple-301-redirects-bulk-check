@@ -62,6 +62,7 @@ class AdminPage
                 'fail' => __('FAIL link is not redirecting', 'simple-bulk-check'),
                 'possible_infinite' => __('ERROR: possible infinite loop', 'simple-bulk-check'),
                 'infinite_loop' => __('ERROR: infinite loop', 'simple-bulk-check'),
+                'check_selected' => __('Check selected', 'simple-bulk-check'),
             );
 
             wp_enqueue_style('simple-bulk-check-style', plugins_url('assets/css/style.css', SIMPLE_BULK_CHECK_FILE), false, SIMPLE_BULK_CHECK_VERSION);
